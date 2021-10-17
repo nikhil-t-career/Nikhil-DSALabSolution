@@ -6,12 +6,23 @@ package com.dsa.balanced.brackets;
  * @author fullstack8
  *
  */
-public class BalanceBrackets {
+public class DriverBalanceBrackets {
+
+	public static void main(String[] args) {
+
+		String expr = "(([{[]}]))";
+
+		// Function call
+		if (checkBracketsBalanced(expr))
+			System.out.println("Expression is Bracket Balanced!!!");
+		else
+			System.out.println("Expression is Not Balanced!!!");
+	}
 
 	static boolean checkBracketsBalanced(String exp) {
 
-		// Using ArrayDeque is faster than using Stack class
-		Stack stack = new Stack(20);
+		// Using Custom made Stack class
+		MyStack stack = new MyStack(20);
 
 		// Traversing the Expression
 		for (int i = 0; i < exp.length(); i++) {
@@ -52,18 +63,8 @@ public class BalanceBrackets {
 			}
 		}
 
-		// Check Empty Stack
+		// Check for Empty Stack
 		return (stack.isEmpty());
 	}
 
-	public static void main(String[] args) {
-
-		String expr = "(([{[]}]))";
-
-		// Function call
-		if (checkBracketsBalanced(expr))
-			System.out.println("Expression is Bracket Balanced!!!");
-		else
-			System.out.println("Expression is Not Balanced!!!");
-	}
 }

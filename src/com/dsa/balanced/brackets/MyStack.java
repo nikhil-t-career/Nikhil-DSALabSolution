@@ -6,12 +6,12 @@ package com.dsa.balanced.brackets;
  * @author fullstack8
  *
  */
-public class Stack {
+public class MyStack {
 	int size;
 	char arr[];
 	int top;
 
-	Stack(int size) {
+	MyStack(int size) {
 		this.size = size;
 		this.arr = new char[size];
 		this.top = -1;
